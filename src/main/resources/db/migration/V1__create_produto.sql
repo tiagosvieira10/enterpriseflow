@@ -1,0 +1,10 @@
+CREATE TABLE produto (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  nome VARCHAR(120) NOT NULL,
+  descricao TEXT,
+  preco_unitario NUMERIC (12,2) CHECK (preco_unitario >= 0) NOT NULL,
+  quantidade_estoque INTEGER DEFAULT 0 NOT NULL CHECK (quantidade_estoque >= 0),
+  ativo BOOLEAN DEFAULT TRUE NOT NULL ,
+  criado_em TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+)

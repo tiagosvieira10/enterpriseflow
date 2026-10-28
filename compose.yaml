@@ -1,0 +1,21 @@
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: enterpriseflow-postgres
+    environment:
+      POSTGRES_DB: enterpriseflow
+      POSTGRES_USER: enterpriseflow
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - enterpriseflow_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U enterpriseflow -d enterpriseflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  enterpriseflow_data:
