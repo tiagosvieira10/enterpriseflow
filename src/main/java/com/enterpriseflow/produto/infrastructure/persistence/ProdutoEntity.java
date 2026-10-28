@@ -39,6 +39,18 @@ public class ProdutoEntity {
     protected ProdutoEntity() {
     }
 
+    public ProdutoEntity(
+        String nome,
+        String descricao,
+        BigDecimal precoUnitario
+    ) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.precoUnitario = precoUnitario;
+        this.quantidadeEstoque = 0;
+        this.ativo = true;
+    }
+
     public Long getId() {
         return id;
     }
