@@ -50,4 +50,9 @@ public class ProdutoController {
                 entity.isAtivo()
         );
     }
+
+    @GetMapping("/{id}")
+    public ProdutoResponse buscarPorId(@PathVariable Long id) {
+        return converter(service.buscarPorId(id));
+    }
 }

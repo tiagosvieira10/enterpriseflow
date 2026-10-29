@@ -35,4 +35,10 @@ public class ProdutoService {
     public List<ProdutoEntity> listar() {
         return repository.findAll();
     }
+
+    public ProdutoEntity buscarPorId(Long id) {
+        return repository.findById(id).orElseThrow(
+            () -> new ProdutoNaoEncontradoException(id)
+        );
+    }
 }
