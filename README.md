@@ -1,33 +1,29 @@
 # EnterpriseFlow
 
-EnterpriseFlow é um sistema de gestão comercial desenvolvido como projeto de portfólio para praticar Java, Spring Boot, APIs REST e persistência relacional. O objetivo é evoluí-lo de forma incremental, mantendo as regras de negócio organizadas e o banco de dados versionado.
+API REST para gestão empresarial, desenvolvida com Java e Spring Boot. O projeto tem como objetivo integrar operações de produtos, vendas, estoque, clientes e financeiro, aplicando boas práticas de desenvolvimento e organização de software.
+
+## Status do Projeto
+### Em Desenvolvimento
 
 ## Tecnologias
 
-- Java 25 e Spring Boot 4
+- Java 
+- Spring Boot
 - Spring Web MVC, Spring Data JPA e Hibernate
-- PostgreSQL 17 e Flyway
+- PostgreSQL 
+- Flyway
 - Maven Wrapper e Docker Compose
 
-## Funcionalidades atuais
 
-- Cadastro de produtos pela API REST
-- Listagem de produtos cadastrados
-- Validação de nome e preço
-- Persistência no PostgreSQL, com migrações gerenciadas pelo Flyway
+## Escopo do projeto
 
-## Estrutura do módulo Produto
-
-```text
-produto/
-├── api/                    # Controller e modelos de entrada/saída da API
-├── application/            # Casos de uso e coordenação das operações
-├── domain/                 # Regras de negócio do produto
-└── infrastructure/
-    └── persistence/        # Entidade JPA e repositório
-```
+O sistema está planejado para contemplar os módulos de produtos, clientes, vendas, estoque, usuários e financeiro, respeitando as regras de negócio e a integridade das operações.
 
 
-## Próximos passos
+## Execução local
 
-O projeto está em desenvolvimento. A evolução planejada inclui testes automatizados, melhoria da separação entre domínio e persistência, consulta e manutenção de produtos, clientes, movimentações de estoque, vendas, autenticação e funcionalidades financeiras.
+O projeto utiliza Maven Wrapper para executar as tarefas de build. A aplicação depende de uma instância PostgreSQL configurada conforme as variáveis de ambiente do projeto.
+
+## Objetivo
+
+Desenvolver uma aplicação de backend com estrutura modular, persistência relacional, validações e regras de negócio consistentes
