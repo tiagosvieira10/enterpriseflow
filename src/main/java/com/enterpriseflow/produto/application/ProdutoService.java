@@ -63,4 +63,18 @@ public class ProdutoService {
 
         return entity;
     }
+
+    @Transactional
+    public ProdutoEntity inativar(Long id) {
+        ProdutoEntity entity = buscarPorId(id);
+        entity.inativar();
+        return entity;
+    }
+
+    @Transactional
+    public ProdutoEntity ativar(Long id) {
+        ProdutoEntity entity = buscarPorId(id);
+        entity.ativar();
+        return entity;
+    }
 }

@@ -70,4 +70,14 @@ public class ProdutoController {
 
         return converter(entity);
     }
+
+    @PatchMapping("/{id}/inativar")
+    public ProdutoResponse inativar(@PathVariable Long id) {
+        return converter(service.inativar(id));
+    }
+
+    @PatchMapping("/{id}/ativar")
+    public ProdutoResponse ativar(@PathVariable Long id) {
+        return converter(service.ativar(id));
+    }
 }

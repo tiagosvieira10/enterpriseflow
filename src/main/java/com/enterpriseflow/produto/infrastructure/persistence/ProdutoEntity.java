@@ -88,4 +88,12 @@ public class ProdutoEntity {
         this.descricao = descricao;
         this.precoUnitario = precoUnitario;
     }
+
+    public void inativar() {
+        this.ativo = false;
+    }
+    
+    public void ativar() {
+        this.ativo = true;
+    }
 }
