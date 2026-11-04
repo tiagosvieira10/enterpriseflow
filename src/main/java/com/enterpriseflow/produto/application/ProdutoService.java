@@ -34,7 +34,25 @@ public class ProdutoService {
         return repository.save(entity);
     }
 
-    public List<ProdutoEntity> listar() {
+    public List<ProdutoEntity> listar(Boolean ativo, String nome) {
+        boolean possuiNome = nome != null && !nome.isBlank();
+
+        if (possuiNome) {
+            nome = nome.trim();
+        }
+
+        if (ativo != null && possuiNome) {
+            return repository.findByAtivoAndNomeContainingIgnoreCase(ativo, nome);
+        }
+
+        if (ativo != null) {
+            return repository.findByAtivo(ativo);
+        }
+
+        if (possuiNome) {
+            return repository.findByNomeContainingIgnoreCase(nome);
+        }
+
         return repository.findAll();
     }
 

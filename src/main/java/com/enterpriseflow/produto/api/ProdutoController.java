@@ -33,8 +33,11 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public List<ProdutoResponse> listar() {
-        return service.listar()
+    public List<ProdutoResponse> listar(
+        @RequestParam(required = false) Boolean ativo,
+        @RequestParam(required = false) String nome
+    ) {
+        return service.listar(ativo, nome)
                 .stream()
                 .map(this::converter)
                 .toList();
