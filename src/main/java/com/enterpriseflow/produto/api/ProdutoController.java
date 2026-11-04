@@ -55,4 +55,19 @@ public class ProdutoController {
     public ProdutoResponse buscarPorId(@PathVariable Long id) {
         return converter(service.buscarPorId(id));
     }
+
+    @PutMapping("/{id}")
+    public ProdutoResponse atualizar(
+        @PathVariable Long id,
+        @Valid @RequestBody ProdutoRequest request
+    ) {
+        ProdutoEntity entity = service.atualizar(
+            id,
+            request.nome(),
+            request.descricao(),
+            request.precoUnitario()
+        );
+
+        return converter(entity);
+    }
 }

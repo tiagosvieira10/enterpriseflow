@@ -75,4 +75,13 @@ public class Produto {
     public boolean isAtivo() {
         return ativo;
     }
+
+    public void alterarNome(String novoNome) {
+        validarNome(novoNome);
+        this.nome = novoNome.trim();
+    }
+    
+    public void alterarDescricao(String novaDescricao) {
+        this.descricao = novaDescricao;
+    }
 }

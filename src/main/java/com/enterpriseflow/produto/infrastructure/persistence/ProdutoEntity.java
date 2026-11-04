@@ -78,4 +78,14 @@ public class ProdutoEntity {
     public OffsetDateTime getCriadoEm() {
         return criadoEm;
     }
+
+    public void atualizarDados(
+        String nome,
+        String descricao,
+        BigDecimal precoUnitario
+    ) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.precoUnitario = precoUnitario;
+    }
 }
