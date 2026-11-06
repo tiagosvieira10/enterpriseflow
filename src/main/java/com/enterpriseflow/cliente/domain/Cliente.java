@@ -4,12 +4,18 @@ import java.time.OffsetDateTime;
 
 public class Cliente {
   
+  // Identificação
+  private Long id;
   private TipoPessoa tipoPessoa;
+  private String documento;
+
+  // Dados cadastrais
   private String nome;
   private String nomeFantasia;
-  private String documento;
   private String email;
   private String telefone;
+
+  // Endereço
   private String cep;
   private String logradouro;
   private String numero;
@@ -17,9 +23,12 @@ public class Cliente {
   private String bairro;
   private String cidade;
   private String uf;
-  private Long id;
+  
+  // Controle
   private boolean ativo;
   private OffsetDateTime criadoEm;
+
+ 
 
   public void atualizarDados() {
 
